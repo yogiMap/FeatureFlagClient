@@ -27,6 +27,9 @@ export default [
           { path: '/base', component: '@/pages/base/dashboard/BaseDashboard' },
           { path: '/base/:baseId', component: '@/pages/base/view/BaseView' },
 
+          { path: '/group', component: '@/pages/group/dashboard/GroupDashboard' },
+          { path: '/group/:groupId', component: '@/pages/group/view/GroupView' },
+
           // *****  ====================================
           { path: '/users', component: '@/pages/user/userSearch/UsersDashboard' },
 

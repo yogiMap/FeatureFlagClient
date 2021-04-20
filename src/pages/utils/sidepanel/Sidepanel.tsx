@@ -2,12 +2,11 @@ import React from 'react';
 import { connect } from 'umi';
 import { get } from 'lodash';
 import { Drawer } from 'antd';
-import UsersFormDeleteWrapper from '@/pages/user/userSearch/form/UsersFormDeleteWrapper';
 import { ISidepanel } from '@/pages/utils/sidepanel/types';
-import UserFormSendMessageWrapper from '@/pages/user/userSearch/form/UserFormSendMessageWrapper';
-
 import BaseFormCreateWrapper from '@/pages/base/form/BaseFormCreateWrapper';
 import BaseFormEditWrapper from '@/pages/base/form/BaseFormEditWrapper';
+import GroupFormCreateWrapper from '@/pages/group/form/GroupFormCreateWrapper';
+import GroupFormEditWrapper from '@/pages/group/form/GroupFormEditWrapper';
 
 interface IProps extends ISidepanel {
   Sidepanel: ISidepanel;
@@ -23,6 +22,9 @@ const Sidepanel = (props: IProps) => {
   const components: any = {
     BaseFormCreate: <BaseFormCreateWrapper />,
     BaseFormEdit: <BaseFormEditWrapper />,
+
+    GroupFormCreate: <GroupFormCreateWrapper />,
+    GroupFormEdit: <GroupFormEditWrapper />,
   };
 
   const mapping = (c: string): any => {
