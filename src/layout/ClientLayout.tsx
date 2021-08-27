@@ -3,9 +3,7 @@ import { Badge, Button, Col, Menu, Row, Affix } from 'antd';
 import { connect, Link } from 'umi';
 import { get } from 'lodash';
 import { ISidepanel } from '@/pages/utils/sidepanel/types';
-import { IClient } from '@/pages/client/types';
 import { Anchor } from 'antd';
-import { ArrowLeftOutlined } from '@ant-design/icons';
 
 interface IProps {
   children: any;
@@ -14,7 +12,6 @@ interface IProps {
   open: (arg: ISidepanel) => void;
   callClient: (arg: ICallClient) => void;
   hangUpCall: () => void;
-  ClientInfo: IClient;
 }
 
 interface ICallClient {
@@ -106,8 +103,7 @@ const ClientLayout = (props: IProps) => {
   const hangUpCall = () => {
     props.hangUpCall();
   };
-
-  if (!props.ClientInfo) return null;
+  
 
   return (
     <>

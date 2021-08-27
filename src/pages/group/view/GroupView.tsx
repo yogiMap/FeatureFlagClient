@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'umi';
 import { get } from 'lodash';
+import GroupViewFlagList from '@/pages/group/view/GroupViewFlagList';
 
 interface IProps {
   groupId: string;
@@ -11,6 +12,8 @@ interface IProps {
 const GroupView = (props: IProps) => {
   const groupId = get(props, 'match.params.groupId');
   const name = get(props, 'GroupView.name', '');
+  const flagsObject = get(props, 'GroupView.flags', {});
+  const flags = Object.keys(flagsObject).map(el => ({name:el, value: flagsObject[el]}) )
 
   console.log(props);
 
@@ -21,6 +24,9 @@ const GroupView = (props: IProps) => {
   return (
     <div>
       <h1>{name}</h1>
+
+      <GroupViewFlagList items={flags} />
+
     </div>
   );
 };
